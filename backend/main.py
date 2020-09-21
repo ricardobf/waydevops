@@ -10,10 +10,11 @@ models.Base.metadata.create_all(bind=engine)
 app = FastAPI()
 
 origins = [
-    "http://localhost.tiangolo.com",
-    "https://localhost.tiangolo.com",
+    "http://ricardobf.me",
+    "http://www.ricardobf.me",
     "http://localhost",
-    "http://localhost:8000",
+    "http://localhost:3000"
+
 ]
 
 app.add_middleware(
@@ -52,4 +53,9 @@ def create_todo(todo: schemas.TodoCreate, db: Session = Depends(get_db)):
 @app.put("/{id}")
 def update_todo(id: int, done: bool = True, db: Session = Depends(get_db)):
     db_todo = crud.update_todo(db, todo_id=id, done=done)
+    return db_todo
+
+@app.delete("/{id}")
+def delete_todo(id: int, db: Session = Depends(get_db)):
+    db_todo = crud.delete_todo(db, todo_id=id)
     return db_todo
