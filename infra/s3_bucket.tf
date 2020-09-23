@@ -1,17 +1,6 @@
-# terraform {
-#   required_providers {
-#     aws = {
-#       source  = "hashicorp/aws"
-#       version = "~> 2.70"
-#     }
-#   }
-# }
-
-# provider "aws" {
-#   profile = "default"
-#   region  = "us-west-2"
-# }
-
+/*
+  S3 Bucket for frontend
+*/
 resource "aws_s3_bucket" "terraform_s3" {
   bucket = var.aws_hosted_zone
   acl    = "public-read"
