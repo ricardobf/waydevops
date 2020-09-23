@@ -32,16 +32,14 @@ jobs:
     - name: Build, tag, and push image to Amazon ECR
       id: build-image
       env:
-        ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
-        ECR_REPOSITORY: ecs-devops-sandbox-repository
-        IMAGE_TAG: ${{ github.sha }}
+        ECR_REGISTRY: 645637669669.dkr.ecr.us-west-2.amazonaws.com
+        ECR_REPOSITORY: waydevops-backend
       run: |
         # Build a docker container and
         # push it to ECR so that it can
         # be deployed to ECS.
-        docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG .
-        docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
-        echo "::set-output name=image::$ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG"
+        docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:latest .
+        docker push $ECR_REGISTRY/$ECR_REPOSITORY:latest
 
     - name: Add Folder to Bucket
       uses: actions/checkout@master

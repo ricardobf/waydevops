@@ -27,7 +27,7 @@ An example of the API is running on [api.ricardobf.me](http://api.ricardobf.me)
 
 ## Installation
 
-### Install and run only the `backend` module.
+### Install and run only the `backend` module:
 
 Using Docker Compose:
 
@@ -43,7 +43,7 @@ Using Docker Compose:
 
 3. On your browser navigate to [localhost](http://localhost)
 
-### Install and run only the `frontend` module.
+### Install and run only the `frontend` module:
 
 1. Navigate to frontend folder:
 ```shell
@@ -68,7 +68,7 @@ Using Docker Compose:
 5. On your browser navigate to [localhost:3000](http://localhost:3000)
 
 
-### Install and run all modules with Terraform.
+### Install and run all modules with Terraform:
 
 1. Navigate to infra folder:
 ```shell
