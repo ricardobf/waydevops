@@ -1,5 +1,5 @@
-aws_access_key = "AKIAZMUYBAMSYCICFWXA"
-aws_secret_key = "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"
+aws_access_key = ""
+aws_secret_key = ""
 aws_region = "us-west-2" 
 aws_hosted_zone = "ricardobf.me" # APP DNS
 aws_api_hosted_zone = "api.ricardobf.me" # API DNS

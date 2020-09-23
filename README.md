@@ -1,4 +1,4 @@
-# waydevops - Simple TODO Web Application on AWS
+# WayDevOps - Simple TODO Web Application on AWS
 
 ![GitHub](https://img.shields.io/github/license/ricardobf/waydevops)
 
