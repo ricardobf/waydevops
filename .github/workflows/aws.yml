@@ -31,6 +31,8 @@ jobs:
     
     - name: Build, tag, and push image to Amazon ECR
       id: build-image
+      with:
+        repository: backend/
       env:
         ECR_REGISTRY: 645637669669.dkr.ecr.us-west-2.amazonaws.com
         ECR_REPOSITORY: waydevops-backend

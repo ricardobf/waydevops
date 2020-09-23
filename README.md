@@ -1,6 +1,8 @@
 # WayDevOps - Simple TODO Web Application on AWS
 
-![GitHub](https://img.shields.io/github/license/ricardobf/waydevops)
+[![GitHub license](https://img.shields.io/github/license/ricardobf/waydevops)](https://github.com/ricardobf/waydevops/blob/production/LICENSE)
+[![GitHub issues](https://img.shields.io/github/issues/ricardobf/waydevops)](https://github.com/ricardobf/waydevops/issues)
+[![GitHub stars](https://img.shields.io/github/stars/ricardobf/waydevops)](https://github.com/ricardobf/waydevops/stargazers)
 
 This repository uses Terraform and GitHub Actions to deploy a simple TODO application to AWS.
 The backend was performed in Python 3.8 and FastAPI, can be deployed using docker (local),
@@ -27,7 +29,7 @@ An example of the API is running on [api.ricardobf.me](http://api.ricardobf.me)
 
 ## Installation
 
-### Install and run only the `backend` module:
+### Install and run only the `backend` module locally:
 
 Using Docker Compose:
 
@@ -43,7 +45,7 @@ Using Docker Compose:
 
 3. On your browser navigate to [localhost](http://localhost)
 
-### Install and run only the `frontend` module:
+### Install and run only the `frontend` module locally:
 
 1. Navigate to frontend folder:
 ```shell
@@ -68,7 +70,7 @@ Using Docker Compose:
 5. On your browser navigate to [localhost:3000](http://localhost:3000)
 
 
-### Install and run all modules with Terraform:
+### Install and run all modules on AWS with Terraform:
 
 1. Navigate to infra folder:
 ```shell

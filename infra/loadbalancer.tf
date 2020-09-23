@@ -6,17 +6,7 @@ resource "aws_alb" "ecs-load-balancer" {
   internal           = false
   load_balancer_type = "application"
   security_groups = ["${aws_security_group.alb_external.id}", "${aws_security_group.allow_internal.id}"]
-  # security_groups    = [aws_security_group.lb_sg.id]
-  # subnets            = [aws_subnet.us-west-2a-public.id, aws_subnet.us-west-2c-public.id]
-
   enable_deletion_protection = true
-
-  # access_logs {
-  #   bucket  = aws_s3_bucket.lb_logs.bucket
-  #   prefix  = "test-lb"
-  #   enabled = true
-  # }
-
   tags = {
     Environment = "production"
   }
