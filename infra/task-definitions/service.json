@@ -1,0 +1,17 @@
+[
+    {
+      "name": "waydevops-backend",
+      "image": "645637669669.dkr.ecr.us-west-2.amazonaws.com/waydevops-backend:latest",
+      "cpu": 256,
+      "memory": 512,
+      "essential": true,
+      "networkMode": "awsvpc",
+      "requiresCompatibilities": ["FARGATE"],
+      "portMappings": [
+        {
+          "containerPort": 80,
+          "hostPort": 80
+        }
+      ]
+    }
+]

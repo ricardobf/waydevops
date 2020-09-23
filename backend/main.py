@@ -1,5 +1,6 @@
 from fastapi import Depends, FastAPI, HTTPException
 from sqlalchemy.orm import Session
+from fastapi.middleware.cors import CORSMiddleware
 
 from app import crud, models, schemas
 from app.db import SessionLocal, engine
@@ -7,6 +8,22 @@ from app.db import SessionLocal, engine
 models.Base.metadata.create_all(bind=engine)
 
 app = FastAPI()
+
+origins = [
+    "http://ricardobf.me",
+    "http://www.ricardobf.me",
+    "http://localhost",
+    "http://localhost:3000"
+
+]
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=origins,
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 
 # Dependency
@@ -36,4 +53,9 @@ def create_todo(todo: schemas.TodoCreate, db: Session = Depends(get_db)):
 @app.put("/{id}")
 def update_todo(id: int, done: bool = True, db: Session = Depends(get_db)):
     db_todo = crud.update_todo(db, todo_id=id, done=done)
+    return db_todo
+
+@app.delete("/{id}")
+def delete_todo(id: int, db: Session = Depends(get_db)):
+    db_todo = crud.delete_todo(db, todo_id=id)
     return db_todo
