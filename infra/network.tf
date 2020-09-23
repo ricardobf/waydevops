@@ -71,24 +71,3 @@ resource "aws_alb_listener" "ecs-alb-listener" {
     type             = "forward"
   }
 }
-
-# resource "aws_subnet" "us-west-2a-public" {
-#   vpc_id = aws_vpc.main.id
-#   cidr_block        = "172.31.32.0/20"
-# #   availability_zone = "${data.aws_availability_zones.available.names[1]}"
-#   depends_on        = [aws_vpc.main]
-#   tags = {
-#     Name        = "Subnet 2a",
-#     Environment = "${terraform.workspace}"
-#   }
-# }
-
-# resource "aws_subnet" "us-west-2c-public" {
-#   vpc_id = aws_vpc.main.id
-#   cidr_block = "172.31.0.0/20"
-#   depends_on        = [aws_vpc.main]
-#   tags = {
-#     Name        = "Subnet 2c",
-#     Environment = "${terraform.workspace}"
-#   }
-# }
