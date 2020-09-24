@@ -31,8 +31,6 @@ jobs:
     
     - name: Build, tag, and push image to Amazon ECR
       id: build-image
-      with:
-        repository: waydevops/backend/
       env:
         ECR_REGISTRY: 645637669669.dkr.ecr.us-west-2.amazonaws.com
         ECR_REPOSITORY: waydevops-backend
@@ -40,7 +38,7 @@ jobs:
         # Build a docker container and
         # push it to ECR so that it can
         # be deployed to ECS.
-        docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:latest .
+        docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:latest -f backend/ .
         docker push $ECR_REGISTRY/$ECR_REPOSITORY:latest
 
     - name: Add Folder to Bucket

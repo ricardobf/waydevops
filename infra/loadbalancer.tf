@@ -24,7 +24,3 @@ resource "aws_alb_target_group" "alb_target_group" {
   vpc_id   = data.aws_vpc.main.id
   depends_on = [aws_alb.ecs-load-balancer]
 }
-
-# resource "aws_vpc" "main" {
-#   cidr_block = "172.31.0.0/16"
-# }

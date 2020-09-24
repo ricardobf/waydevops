@@ -22,8 +22,10 @@ An example of the API is running on [api.ricardobf.me](http://api.ricardobf.me)
 
 ## Requirements
 
-- Python 3.8;
-- nodejs, npm;
+- Python 3.8; (for local installation)
+- Docker; (for local installation)
+- Docker Compose; (for local installation)
+- nodejs, npm; (for local installation)
 - Terraform;
 - AWS account with administrator previleges.
 
